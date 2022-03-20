@@ -28,10 +28,41 @@ class Lienzo(este:MainActivity):View(este) {
         val p = Paint()
 
         c.drawColor(fondo)
+
+        //MONTAÑA IZQUIERDA
+        p.style = Paint.Style.FILL
+        p.color = Color.rgb(185,230,187)
+        c.drawOval(-500f,749f,1450f,2700f,p)
+        p.style = Paint.Style.STROKE
+        p.strokeWidth = 10f
+        p.color = Color.rgb(106,106,106)
+        c.drawOval(-500f,749f,1450f,2700f,p)
+
+        //MONTAÑA DERECHA
+        p.style = Paint.Style.FILL
+        p.color = Color.rgb(185,230,187)
+        c.drawOval(1200f,600f,3000f,1200f,p)
+        p.style = Paint.Style.STROKE
+        p.strokeWidth = 10f
+        p.color = Color.rgb(106,106,106)
+        c.drawOval(1200f,600f,3000f,1200f,p)
+
+        //MONTAÑA CENTRO
+        p.style = Paint.Style.FILL
+        p.color = Color.rgb(185,230,187)
+        c.drawOval(400f,549f,2200f,2000f,p)
+        p.style = Paint.Style.STROKE
+        p.strokeWidth = 10f
+        p.color = Color.rgb(106,106,106)
+        c.drawOval(400f,549f,2200f,2000f,p)
+
         for (copo in copos) {
             copo.mover()
             copo.pintar(c)
         }
+
+
+
     }
 
 }

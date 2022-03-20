@@ -6,20 +6,16 @@ import android.graphics.Paint
 import kotlin.random.Random
 
 class Copo(l:Lienzo){
-    val l = l
     var x = 0f
     var y = 0f
     val ancho = 2640
     val largo = 1540
-    //var movX = 0f
     var movY = 0f
-    var color = Color.BLACK
 
     init {
         x = rand(ancho)
         y = rand(largo)
-        movY = rand(6)+2
-        color = Color.WHITE
+        movY = rand(5)+1
     }
 
     private fun rand(hasta:Int) : Float{
@@ -28,14 +24,12 @@ class Copo(l:Lienzo){
 
     fun mover(){
         y += movY
-        if(y <0 || y>largo){
-            y=1540-y
-        }
+        if(y>largo)y=0f
     }
 
     fun pintar(canvas: Canvas){
         var p = Paint()
-        p.color = color
+        p.color = Color.WHITE
         canvas.drawCircle(x,y,5f,p)
     }
 }
